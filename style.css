@@ -1,39 +1,50 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #f4f4f4;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
 nav {
-  background: #222;
-  padding: 10px;
+  background: #0f172a;
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
   justify-content: center;
-  padding: 0;
+  list-style: none;
+  padding: 12px;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 18px;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
+nav ul li a:hover {
+  color: #38bdf8;
+}
+
+/* SECTIONS */
 section {
-  padding: 80px 20px;
-  max-width: 900px;
+  padding: 90px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -42,25 +53,80 @@ section {
 }
 
 #home span {
-  color: #007acc;
+  color: #2563eb;
 }
 
-.skills p {
+#home h1 {
+  font-size: 2.5rem;
+}
+
+#home h3 {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* SKILLS */
+.skills {
+  margin-top: 30px;
+}
+
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill-name {
+  font-weight: 600;
+}
+
+.skill-bar {
   background: #ddd;
-  padding: 8px;
-  border-radius: 5px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 10px;
+  margin-top: 5px;
 }
 
+.skill-fill {
+  height: 100%;
+  width: 70%;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  animation: fill 2s ease-in-out;
+}
+
+@keyframes fill {
+  from { width: 0; }
+  to { width: 70%; }
+}
+
+/* BOXES */
 .box, .project {
   background: #fff;
-  padding: 15px;
-  margin: 15px 0;
-  border-left: 5px solid #007acc;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border-left: 5px solid #2563eb;
 }
 
+/* FOOTER */
 footer {
-  background: #222;
+  background: #0f172a;
   color: #fff;
   text-align: center;
   padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 8px 0;
+  }
+
+  #home h1 {
+    font-size: 2rem;
+  }
 }
